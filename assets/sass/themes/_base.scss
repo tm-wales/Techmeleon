@@ -1,0 +1,140 @@
+// Theme update here. If just changing colors, should be identical across themes
+a {
+    &:link,
+    &:visited {
+        color: $color-text;
+    }
+    &:hover {
+        color: $color-primary;
+    }
+    &.btn {
+        &:hover {
+            color: $color-text;
+        }
+        border: 1px solid $color-primary;
+        &:after {
+            background-color: $color-primary;
+        }
+    }
+}
+
+.app {
+    background-color: $color-background;
+}
+
+.page {
+    color: $color-text;
+    background-color: $color-background;
+    min-height: 100vh;
+    &__top {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.arrow {
+    &:before,
+    &:after {
+        background-color: $color-text;
+    }
+}
+
+.u-line-highlight,
+.u-line-highlight-left {
+    &:after {
+        background-color: $color-secondary;
+    }
+}
+
+.navigation {
+    background-color: transparent;
+}
+
+.nav__link {
+    &:after {
+        background-color: $color-primary;
+    }
+    &.nuxt-link-active:after {
+        background-color: $color-text;
+    }
+    &__link:hover {
+        color: $color-text-inverse !important;
+    }
+}
+
+.nav__toggle {
+    &__bars {
+        &::before,
+        &::after {
+            background-color: $color-text;
+        }
+    }
+    &.open {
+        & .nav__toggle__bars {
+            &::before,
+            &::after {
+                background-color: $color-text;
+            }
+        }
+    }
+}
+
+.nav__slide {
+    background-color: $color-background-inverse !important;
+    &__link {
+        color: $color-primary !important;
+        &:hover {
+            color: $color-text-inverse !important;
+        }
+    }
+}
+
+.nav__contact.big {
+    color: $color-primary !important;
+    &:hover {
+        color: $color-text-dark !important;
+    }
+}
+
+.boom {
+    background-color: $color-background;
+}
+
+.header__title {
+    color: $color-primary;
+}
+
+.contact {
+    &__section {
+        &:after {
+            background-color: $color-background;
+        }
+        &:before {
+            background-color: $color-secondary;
+        }
+    }
+}
+
+.header,
+.services,
+.featured,
+.next-page {
+    background-color: $color-background;
+}
+
+.project__page {
+    .project {
+        &__header {
+        }
+        &__section {
+            &.inverse {
+                background-color: $color-background-inverse;
+                color: $color-text-inverse;
+                & a {
+                    color: $color-text-inverse;
+                }
+            }
+        }
+    }
+}

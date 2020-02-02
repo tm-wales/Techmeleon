@@ -1,0 +1,12 @@
+.light {
+    // Color update here
+    $color-background: $color-background-light;
+    $color-text: $color-text-dark;
+    $color-primary: $color-primary-light;
+    $color-secondary: $color-secondary-light;
+    $color-background-inverse: $color-background-dark;
+    $color-text-inverse: $color-background-light;
+    $color-primary-inverse: $color-primary-dark;
+    $color-secondary-inverse: $color-secondary-dark;
+    @import 'base';
+}

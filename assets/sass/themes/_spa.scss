@@ -1,0 +1,12 @@
+.spa {
+    // Color update here
+    $color-background: #d3b300;
+    $color-text: white;
+    $color-primary: #d3b300;
+    $color-secondary: white; // Color update ended
+    $color-background-inverse: white;
+    $color-text-inverse: #d3b300;
+    $color-primary-inverse: black;
+    $color-secondary-inverse: black;
+    @import 'base';
+}

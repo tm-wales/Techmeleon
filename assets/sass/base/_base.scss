@@ -1,0 +1,37 @@
+/*        Base        */
+
+/* ------------------ */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 50%; // defines what 1 rem is
+    @include respond('ipad') {
+        font-size: 62.5%; // defines what 1 rem is
+    }
+    @include respond('professional') {
+        font-size: 70%; // defines what 1 rem is
+    }
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ------------------ */

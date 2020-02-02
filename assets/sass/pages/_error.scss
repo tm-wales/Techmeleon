@@ -1,0 +1,22 @@
+.under-construction {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: #d4a3f0;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    width: 80%;
+    &.bottom {
+        bottom: 12rem;
+        font-size: 1.4rem;
+    }
+    &.center {
+        font-size: 2rem;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    & p {
+        margin-bottom: 1rem;
+    }
+}

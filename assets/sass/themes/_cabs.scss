@@ -1,0 +1,12 @@
+.cabs {
+    // Color update here
+    $color-background: #0085ab;
+    $color-text: white;
+    $color-primary: #0085ab;
+    $color-secondary: white; // Color update ended
+    $color-background-inverse: white;
+    $color-text-inverse: #0085ab;
+    $color-primary-inverse: black;
+    $color-secondary-inverse: black;
+    @import 'base';
+}

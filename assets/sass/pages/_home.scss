@@ -1,0 +1,15 @@
+.page__home {
+    .projects {
+        @include respond('common') {
+            grid-template-columns: 1fr 1fr !important;
+        }
+    }
+    .project {
+        @include respond('common') {
+            &:nth-child(3),
+            &:nth-child(4) {
+                display: block !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,154 @@
+// OVERLAY FOR LOADING, TRANSITIONS
+.app {
+    overflow: hidden;
+    & .boom {
+        height: 3000px;
+        width: 3000px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform: scale(0, 0) translate(-50%, -50%);
+        transform-origin: 0 0;
+        will-change: transform;
+        border-radius: 50%;
+        z-index: 50;
+        transition-timing-function: ease-in-out;
+        &__logo {
+            transform-origin: 0 0;
+            transition: 1s all;
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: scale(0.5, 0.5) translate(-50%, -50%);
+            height: 6rem;
+            width: 6rem;
+            z-index: 50;
+        }
+    }
+    &.transition {
+        & .boom {
+            transition: transform 1s;
+            transform: scale(2, 2) translate(-50%, -50%);
+            &__logo {
+                transform: scale(1, 1) translate(-50%, -50%);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        & .loader {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.loader {
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s all;
+    transform-origin: 0 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10rem;
+    width: 10rem;
+    &__container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    &__circle {
+        animation: rotate 2s linear infinite;
+        transform-origin: center center;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__path {
+        stroke-dasharray: 150, 200;
+        stroke-dashoffset: -10;
+        animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+        stroke-linecap: round;
+    }
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124;
+    }
+}
+
+@keyframes color {
+    0% {
+        stroke: #00ffd5;
+    }
+    40% {
+        stroke: #ff9100;
+    }
+    66% {
+        stroke: #00ffd5;
+    }
+    80%,
+    90% {
+        stroke: #ff9100;
+    }
+}
+
+.scan {
+    &-leave-active {
+        transition: 1s width;
+        &:after {
+            transition: 1s width;
+        }
+    }
+    &-enter-active {
+        transition: 1s width;
+        &:after {
+            transition: 1s width;
+        }
+    }
+    &-leave-active,
+    &-enter {
+        &:after {
+            width: 100% !important;
+        }
+    }
+}
+
+.fade {
+    &-enter-active,
+    &-leave-active {
+        transition: opacity 0.5s;
+        transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+        overflow: hidden;
+    }
+    &-enter {
+        opacity: 0;
+    }
+    &-leave-active {
+        opacity: 0;
+    }
+}

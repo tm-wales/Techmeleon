@@ -1,0 +1,53 @@
+.policy {
+    max-width: 90rem;
+    margin: 0 auto;
+    &__header {
+        padding-top: 10rem;
+        text-align: center;
+    }
+    &__title {
+        margin-top: 10rem;
+        text-align: center;
+    }
+    &__links {
+        height: 7rem;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    &__content {
+        padding: 2rem;
+        font-size: 1.6rem;
+        & h1 {
+            margin-top: 2.5rem;
+            margin-left: 0;
+            font-size: 1.8rem;
+            color: white !important;
+            font-weight: bold;
+            letter-spacing: 0.5rem;
+            text-shadow: none;
+        }
+        & h2 {
+            margin-top: 3rem;
+            margin-left: 0;
+            font-size: 1.8rem;
+            color: white !important;
+            font-weight: bold;
+            text-shadow: none;
+        }
+        & ul {
+            margin: 1rem 0;
+        }
+        & p {
+            margin: 1rem 0;
+        }
+        & li {
+            list-style-type: circle;
+            margin-left: 4rem;
+        }
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

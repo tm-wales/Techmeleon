@@ -1,0 +1,130 @@
+.project__page {
+    .project {
+        &__header {
+        }
+        &__section {
+            &.header {
+                height: 50vh;
+            }
+            min-height: 50vh;
+            position: relative;
+            padding: 5rem 3rem;
+            @include respond('ipadPro') {
+                padding: 10rem 5rem;
+            }
+            @include respond('common') {
+                &.header {
+                    height: 100vh;
+                }
+                min-height: 100vh;
+                padding: 20rem 10rem;
+            }
+            &--flex {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                position: relative;
+                @include respond('ipadPro') {
+                    flex-direction: row;
+                    max-width: 75%;
+                    margin: 0 auto;
+                }
+            }
+        }
+        &__caption {
+            visibility: hidden;
+        }
+        &__details {
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+        }
+        &__title {
+            font-size: 5rem;
+            font-weight: bold;
+            line-height: 5rem;
+            z-index: 10;
+            max-width: 30rem;
+            @include respond('ipad') {
+                font-size: 8rem;
+                line-height: 8rem;
+                max-width: 50rem;
+            }
+            @include respond('common') {
+                font-size: 12rem;
+                line-height: 12rem;
+                max-width: 75rem;
+            }
+        }
+        &__image {
+            position: absolute;
+            right: 0rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: auto;
+            width: 75%;
+            z-index: 0;
+            @include respond('common') {
+                width: 50%;
+            }
+        }
+        &__info {
+            z-index: 1;
+        }
+        &__solutions,
+        &__tags {
+            margin-top: 2rem;
+            font-size: 2rem;
+            padding: 2rem 1rem;
+            padding-left: 1px;
+            @include respond('ipadPro') {
+                align-self: center;
+            }
+        }
+        &__tag {
+            display: inline-block;
+            &:not(:last-child) {
+                &:after {
+                    content: '\2022';
+                    margin: 0 2rem;
+                }
+            }
+        }
+        &__solution {
+            display: block;
+            text-decoration: underline;
+            padding: 1rem;
+            padding-left: 0;
+            font-weight: bold;
+        }
+        &__intro {
+            align-self: center;
+            @include respond('ipadPro') {
+                max-width: 50%;
+            }
+            &__title {
+                font-weight: bold;
+                font-size: 2.5rem;
+            }
+            &__text {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+            &__image {
+                width: 100%;
+                margin: 0 auto;
+                margin-top: 5rem;
+                @include respond('ipadPro') {
+                    max-width: 75%;
+                    margin-top: 10rem;
+                }
+                & img {
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

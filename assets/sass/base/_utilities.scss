@@ -1,0 +1,69 @@
+.u-container {
+    max-width: 177rem;
+    margin: 0 auto;
+    &--mid {
+        max-width: 140rem;
+        margin: 0 auto;
+    }
+    &--small {
+        max-width: 98rem;
+        margin: 0 auto;
+    }
+}
+
+.u-flex-container {
+    display: flex;
+    justify-content: flex-start;
+    &--right {
+        justify-content: flex-end;
+    }
+}
+
+.u-relative {
+    position: relative;
+}
+
+.u-max {
+    width: 100%;
+    height: 100%;
+}
+
+.u-grid {
+    display: block;
+    @supports (display: grid) {
+        display: grid;
+    }
+}
+
+.u-abs {
+    @include abs-center;
+}
+
+.u-line-highlight {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 3rem;
+        height: 2px;
+        bottom: -0.5rem;
+        left: calc(50% - 1.5rem);
+        transform: rotate(-2deg);
+    }
+
+    &-left {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 3rem;
+            height: 2px;
+            bottom: -0.5rem;
+            left: 2px;
+        }
+    }
+}
+
+.u-temp {
+    height: 100vh;
+}

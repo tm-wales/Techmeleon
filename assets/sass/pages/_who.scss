@@ -1,0 +1,136 @@
+.who {
+    // background-color: $color-background-light;
+    .next-section {
+        display: none;
+
+        @include respond('ipadPro') {
+            display: block;
+        }
+    }
+
+    &__section {
+        position: relative;
+        text-align: left;
+        padding: 3rem;
+        max-width: 120rem;
+        margin: 0 auto;
+        @include respond('ipadPro') {
+            @supports (display: grid) {
+                max-width: 2000rem;
+                padding: 5rem;
+                min-height: 100vh;
+                display: grid;
+                grid-template-areas:
+                    'details images'
+                    'details images'
+                    'details images';
+                grid-column-gap: 15rem;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                justify-items: center;
+            }
+        }
+    }
+    &__details {
+        @include respond('ipadPro') {
+            @supports (display: grid) {
+                grid-area: details;
+                max-width: 70rem;
+            }
+        }
+    }
+    &__title {
+        font-family: 'Techmeleon';
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        @include respond('ipad') {
+            @supports (display: grid) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+    &__tag {
+        font-size: 5rem;
+        font-family: 'Techmeleon';
+        color: $color-primary;
+        line-height: 5.5rem;
+        margin: 3rem 0 2rem 0;
+        @include respond('ipadPro') {
+            @supports (display: grid) {
+                font-size: 8rem;
+                line-height: 8rem;
+                margin: 3rem 0 4rem 0;
+            }
+        }
+    }
+    &__content {
+        font-size: 2rem;
+        & p {
+            margin-bottom: 3rem;
+        }
+        @include respond('ipadPro') {
+            font-size: 1.6rem;
+
+            & p {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+    &__images {
+        perspective: 1000;
+        position: relative;
+        margin: 3rem 0;
+        text-align: center;
+
+        @include respond('ipadPro') {
+            @supports (display: grid) {
+                grid-area: images;
+                max-width: 70rem;
+                left: -2rem;
+            }
+        }
+
+        &.animate {
+            & .who__image:nth-child(2) {
+                border: 1rem solid transparent;
+                animation: opacityLoop 10s infinite ease-in-out;
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        border: 1rem solid white;
+        // box-shadow: 0 0 15px #aaa;
+
+        @include respond('ipadPro') {
+            @supports (display: grid) {
+                transform: rotateY(-10deg);
+            }
+        }
+
+        &:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 2;
+        }
+    }
+}
+
+@keyframes opacityLoop {
+    0%,
+    75%,
+    100% {
+        opacity: 0;
+        transform: scale(0.8) rotateY(-10deg);
+    }
+
+    25%,
+    50% {
+        opacity: 1;
+        transform: scale(1) rotateY(-10deg);
+    }
+}

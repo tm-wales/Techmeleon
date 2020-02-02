@@ -1,0 +1,25 @@
+.logo {
+    position: absolute;
+    overflow: hidden;
+    top: 0rem;
+    height: auto;
+    transition: 1s all;
+    &.right,
+    &.left {
+        top: 7rem;
+        width: 200px;
+        @include respond('ipadPro') {
+            width: 400px;
+        }
+        z-index: 2;
+    }
+    &.right {
+        opacity: 0.3;
+        right: 0;
+    }
+    &.left {
+        opacity: 1;
+        left: 0;
+        transform: translate(-40%, 0%);
+    }
+}

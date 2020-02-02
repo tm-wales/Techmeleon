@@ -1,0 +1,43 @@
+@mixin abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Media query manager */
+
+@mixin respond($breakpoint) {
+    @if $breakpoint== 'Galaxy' {
+        @media (min-width: 359px) {
+            @content;
+        }
+    } @else if $breakpoint== 'ipad' {
+        @media (min-width: 768px) {
+            @content;
+        }
+    } @else if $breakpoint== 'ipadPro' {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    } @else if $breakpoint== 'common' {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $breakpoint== 'professional' {
+        @media (min-width: 1600px) {
+            @content;
+        }
+    } @else if $breakpoint== 'gamer' {
+        @media (min-width: 2800px) {
+            @content;
+        }
+    } @else {
+        // For custom display breaking points
+        @media (min-width: $breakpoint + 'px') {
+            @content;
+        }
+    }
+}
+
+// --------------------------

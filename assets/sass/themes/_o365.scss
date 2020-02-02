@@ -1,0 +1,12 @@
+.o365 {
+    // Color update here
+    $color-background: #c0e8fa;
+    $color-text: #2b2b2b;
+    $color-primary: #c0e8fa;
+    $color-secondary: #2b2b2b; // Color update ended
+    $color-background-inverse: #2b2b2b;
+    $color-text-inverse: #c0e8fa;
+    $color-primary-inverse: white;
+    $color-secondary-inverse: white;
+    @import 'base';
+}

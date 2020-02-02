@@ -1,0 +1,154 @@
+.contact-form {
+    border: 2px solid $color-primary;
+    border-radius: 1rem;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 90rem;
+    padding: 2rem 3rem;
+    text-align: left;
+    transition: all 1s;
+    min-height: 2rem;
+    &__section {
+        &__title {
+            font-weight: bold;
+            &.finished {
+                text-align: center;
+            }
+        }
+    }
+    &__section {
+        &__title {
+            text-align: left;
+        }
+    }
+    &__group,
+    .vdatetime {
+        position: relative;
+        margin-bottom: 2rem;
+        color: $color-text-inverse;
+        @include respond('ipad') {
+            margin-bottom: 0;
+        }
+        &.textarea {
+            grid-column: 1 / span 2;
+        }
+        &--error {
+            border: 1px solid red;
+        }
+    }
+    .vdatetime {
+        margin-top: 2rem;
+        position: relative;
+        &:after {
+            position: absolute;
+            content: 'Select a date & time';
+            font-size: 1.6rem;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        &.off {
+            &:after {
+                content: '';
+            }
+        }
+    }
+    .vdatetime-popup__header {
+        background-color: $color-primary;
+    }
+    .vdatetime-calendar__month__day--selected span span,
+    .vdatetime-calendar__month__day--selected:hover span span {
+        background-color: $color-primary;
+    }
+    .vdatetime-popup__actions__button,
+    .vdatetime-time-picker__item--selected {
+        color: $color-primary;
+    }
+    &__form {
+        margin-top: 2rem;
+        @include respond('ipad') {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1rem;
+            grid-row-gap: 2rem;
+        }
+    }
+    &__input,
+    .vdatetime-input {
+        font-family: inherit;
+        color: inherit;
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+        padding-top: 2rem;
+        border-radius: 2px;
+        background-color: rgba($color-text, 0.9);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 100%;
+        display: block;
+        transition: all 0.3s;
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-background, 0.3);
+            border-bottom: 3px solid $color-secondary;
+            &:invalid {
+                border-bottom: 3px solid red;
+            }
+        }
+        &::-webkit-input-placeholder {
+            color: $color-text-inverse;
+        }
+        &--error {
+            color: red;
+        }
+    }
+    &__input:placeholder-shown+&__label:not(&__label--textarea) {
+        opacity: 0;
+        visibility: hidden;
+        padding: 1rem 1.5rem;
+        padding-top: 2rem;
+    }
+    &__label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 1.2rem;
+        font-weight: 700;
+        display: block;
+        color: rgba($color-text-inverse, 0.6);
+        transition: all 0.3s;
+        z-index: 1000;
+        padding-left: 1.5rem;
+        padding-top: 0.1rem;
+        width: 100%;
+    }
+    .next {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        & .back {
+            text-align: left;
+            align-self: start;
+        }
+        & .forward {
+            text-align: right;
+            align-self: end;
+        }
+        & .back,
+        & .forward {
+            &.hide {
+                opacity: 0;
+                visibility: hidden;
+            }
+            & span {
+                cursor: pointer;
+                padding: 1rem 3rem;
+                transition: 0.5s color;
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.som {
+    // Color update here
+    $color-background: #82b948;
+    $color-text: white;
+    $color-primary: #82b948;
+    $color-secondary: white; // Color update ended
+    $color-background-inverse: white;
+    $color-text-inverse: #82b948;
+    $color-primary-inverse: black;
+    $color-secondary-inverse: black;
+    @import 'base';
+    .project__section.inverse {
+        background-image: linear-gradient(
+                rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.9)
+            ),
+            url('/projects/som/tmpblueprintbackground.jpg') !important;
+        background-attachment: fixed;
+        background-color: transparent !important;
+    }
+}

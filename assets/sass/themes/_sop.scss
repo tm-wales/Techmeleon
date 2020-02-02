@@ -1,0 +1,12 @@
+.sop {
+    // Color update here
+    $color-background: #82b968;
+    $color-text: white;
+    $color-primary: #82b968;
+    $color-secondary: white; // Color update ended
+    $color-background-inverse: white;
+    $color-text-inverse: #82b968;
+    $color-primary-inverse: black;
+    $color-secondary-inverse: black;
+    @import 'base';
+}
