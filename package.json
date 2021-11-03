@@ -27,7 +27,7 @@
     "luxon": "^1.11.2",
     "nodemailer": "^5.1.1",
     "nuxt": "^2.3.4",
-    "validator": "^10.11.0",
+    "validator": "^13.7.0",
     "vue-carousel-3d": "^0.1.23",
     "vue-datetime": "^1.0.0-beta.10",
     "vue-in-viewport-directive": "^1.3.0",
